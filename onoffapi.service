@@ -1,0 +1,13 @@
+[Unit]
+Description=OnOffAPI REST API Service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/OnOffAPI/run_api.sh
+# Set environment variables needed for Wayland
+Environment=WAYLAND_DISPLAY=wayland-0
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+
+[Install]
+WantedBy=default.target
